@@ -2,8 +2,6 @@ var Participant = require('../models/participant');
 var express = require('express');
 var router = express.Router();
 const CSVToJSON = require('csvtojson');
-const JSONTOCSV =require('json2csv')
-const FileSystem =require('fs');
 
 // CSVToJSON().fromFile("./public/source.csv").then(source =>{
 //     console.log(source.length)
