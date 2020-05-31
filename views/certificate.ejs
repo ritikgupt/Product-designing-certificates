@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>AMZ Certificate</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">     
+    <script src= 
+"https://files.codepedia.info/files/uploads/iScripts/html2canvas.js"> 
+    </script> 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<center>
+<div id="html-content-holder" style="background-color: #fff";  
+ class="content">
+ <div class="head">
+            <div class="headers">
+                <img src="amzlogo.png" style="float: left;width:235px;" >
+                <img src="rdc.png" style="float: right;width:245px;">
+            </div>
+
+        </div>
+
+        <div class="middle">
+            <div class="title text-center"  style="width: auto;">
+                <div class="text">
+                        <h1>Certificate</h1>
+                        <h2>of Participation</h2>
+                </div>
+                
+                <div class="midText">
+                    
+                    <div class="txt" > From the team of MotorSport Engineers</div>
+                </div>
+                
+                <div class="certify">
+                    <div class="cert">This to certify that</div>
+                    <div class="details">
+                    <span style="color: black"><%=participant.name%></span>
+                    <br>
+                    <span style="color: black">has Participated in</span>
+                    <br>
+                    <span style="color: black">Webinar on Future of Scope of Electric Vehicle</span>
+                    </div>
+                    <div class="wish">We wish Him/Her all success in future</div>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="lowerImage">
+                <div class="lower">
+                        <img src="director.png" style="float: left;margin-left: 50px;width: 172px;margin-top: 25px">
+                        <img src="badge.png" style="float: right;margin-right: 40px;width: 140px">
+                </div>
+        </div>
+        
+        <div>
+            <hr class="new1">
+        </div>
+
+        <div class="footer text-center">
+            <div class=""> 
+            <img src="footer.png" style="align-content: center;width:100%;">
+
+        </div>
+    </div>
+</div>
+</center>
+    <div class="text-center" style="padding: 20px;">
+        <a class="btn btn-danger" id="btn-Convert-Html2Image" href="#"> 
+            <i class="fa fa-download" style="color: aliceblue;"></i> Double Click To Download 
+        </a> 
+    </div>
+    <br/>  
+</html>
+<script>
+    $(document).ready(function() { 
+          
+          // Global variable 
+          var element = $("#html-content-holder");  
+        
+          // Global variable 
+          var getCanvas;  
+$("#btn-Convert-Html2Image").on('click', function() { 
+    html2canvas(element, { 
+                    onrendered: function(canvas) {  
+                        var imgageData =  
+                    canvas.toDataURL("image/png"); 
+                var newData = imgageData.replace( 
+                /^data:image\/png/, "data:application/octet-stream"); 
+              
+                $("#btn-Convert-Html2Image").attr( 
+                "download", "certificate.png").attr( 
+                "href", newData); 
+                    }
+                })
+            }); 
+                     
+                
+               
+        }); 
+</script>
